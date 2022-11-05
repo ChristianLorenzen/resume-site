@@ -1,0 +1,216 @@
+$backgroundColor: hsl(219, 15%, 23%);
+$accentColor: lime;
+$cardTextColor: white;
+$cardAccentColor: hsl(197, 79%, 65%);
+$frostedGlassColor: rgba(26, 156, 207, 0.2);
+
+.card-panel-cont {
+    position: absolute;
+    width: 100%;
+    height: auto;
+    background: $backgroundColor;
+
+    .card-panel {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        width: 85%;
+        min-height: 90vh;
+        margin: 2% auto 2% auto;
+        padding: 2% 2% 2% 2%;
+        border-radius: 40px;
+        align-items: center;
+        justify-content: center;
+        
+        background-position: center;
+        
+        .card {
+            flex: 1;
+            flex-basis: calc(100% / 4);
+            width: 400px;
+            height: 400px;
+            margin: 1% 1% 1% 1%;
+            border-radius: 20px;
+            background-color: $frostedGlassColor; 
+            box-shadow: 0 0 1rem 0 rgba(0, 0, 0, .3); 
+            overflow: visible !important;
+
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            transform-style: preserve-3d;
+            -webkit-transform-style: preserve-3d;
+            
+            @media screen and (max-width: 1200px) {
+                flex-basis: calc(100% / 3);
+            }
+
+            @media screen and (max-width: 650px) {
+                flex-basis: calc(100% / 2);
+            }
+
+            .card-title {
+                position: relative;
+                top: 0;
+                height: 20%;
+                width: 100%;
+                padding: 1%;
+
+                .card-title-left {
+                    float: left;
+                    display: flex;
+                    flex-direction: column;
+                    width: 75%;
+
+                    .card-title-title-text {
+                        margin: 0 1% 0% 0%;
+                        padding: 0 0 0 5%;
+                        font-size: calc(14px + 1.2vmin);
+                        color: $cardAccentColor;
+                        font-family: 'Bebas Neue', cursive;
+                        font-weight: bolder;
+                        font-stretch: ultra-condensed;
+                        text-transform: uppercase;
+                    }
+
+                    .card-title-title-text-clicked {
+                        margin: 0 1% 0% 0%;
+                        padding: 0 0 0 5%;
+                        font-size: calc(16px + 3vmin);
+                        color: $cardAccentColor;
+                        font-family: 'Bebas Neue', cursive;
+                        letter-spacing: 0.03em;
+                        font-weight: bolder;
+                        font-stretch: ultra-condensed;
+                        text-transform: uppercase;
+                    }
+
+                    .card-title-desc {
+                        padding: 0 5% 0 5%;
+                        font-size: calc(6px + .6vmin);
+                        color: $cardAccentColor;
+                        font-family: 'Hebos', sans-serif;
+                        font-weight: 900;
+                        text-transform: uppercase;
+
+                    }
+
+                    .card-title-full-desc {
+                        padding: 0 5% 0 5%;
+                        font-size: calc(10px + 1vmin);
+                        color: $cardAccentColor;
+                        font-family: 'Hebos', sans-serif;
+                        font-weight: 900;
+                        text-transform: uppercase;
+                    }
+                }
+                .card-title-right {
+                    width: 20%;
+                    height: 100%;
+                    float: right;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+    
+                    .card-title-learn-more {
+                        justify-self: center;
+                        align-self: center;
+                        letter-spacing: 0.1em;
+                        cursor: pointer;
+                        font-size: 14px;
+                        font-weight: 400;
+                        line-height: 45px;
+                        max-width: 160px;
+                        position: relative;
+                        text-decoration: none;
+                        text-transform: uppercase;
+                        width: 100%;
+                        text-align: center;
+                    }
+    
+                    .card-title-learn-more:hover {
+                        text-decoration: none;
+                    }
+    
+                    .effectLight {
+                        color: #FFF;
+                        border: 4px solid #000;
+                        box-shadow:0px 0px 0px 1px #000 inset;
+                        background-color: #000;
+                        overflow: hidden;
+                        position: relative;
+                        transition: all 0.3s ease-in-out;
+                    }
+    
+                    .effectLight:hover {
+                        border: 4px solid #666;
+                        background-color: #FFF;
+                        box-shadow: 0px 0px 0px 4px #EEE inset;
+                    }
+    
+                    .effectLight span {
+                        justify-self: center;
+                        align-items: center;
+                        transition: all 0.2s ease-out;
+                        z-index: 2;
+                    }
+    
+                    .effectLight:hover span{
+                        letter-spacing: 0.13em;
+                        color: #333;
+                    }
+                    
+                    .effectLight:after {
+                        background: #FFF;
+                        border: 0px solid #000;
+                        content: "";
+                        height: 155px;
+                        left: -75px;
+                        opacity: .8;
+                        position: absolute;
+                        top: -50px;
+                        -webkit-transform: rotate(35deg);
+                                transform: rotate(35deg);
+                        width: 50px;
+                        transition: all 1s cubic-bezier(0.075, 0.82, 0.165, 1);/*easeOutCirc*/
+                        z-index: 1;
+                      }
+                      .effectLight:hover:after {
+                        background: #FFF;
+                        border: 20px solid #000;
+                        opacity: 0;
+                        left: 120%;
+                        -webkit-transform: rotate(40deg);
+                                transform: rotate(40deg);
+                      }
+                }
+            }
+
+            
+
+            .card-image-cont {
+                position: absolute;
+                top: 22%;
+                width: 100%;
+                height: 75%;
+                overflow: hidden;
+                margin-top: 2%;
+
+                .card-image {
+                    display: flex;
+                    justify-self: center;
+                    max-width: 95%;
+                    max-height: 95%;
+                    transform: translate(-50%, -50%);
+                    position: relative;
+                    left: 50%;
+                    top: 50%;
+                    z-index: 1;
+                    border-radius: 10px;
+                    overflow: hidden;
+                }
+            }
+        }
+    }
+}
+
+

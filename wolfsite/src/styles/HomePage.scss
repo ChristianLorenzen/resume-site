@@ -1,0 +1,71 @@
+$lightGray:hsl(219, 15%, 23%);
+$fontColor:hsl(0, 0%, 100%);
+$accentColor:hsl(180, 100%, 50%);
+
+.App {
+  height: auto;
+  width: 100%;
+  min-width: 200px;
+  background-color: $lightGray;
+  position: relative;
+}
+
+
+.App-top-content {
+    position: static;
+    width: 95%;
+    height: 100%;
+    margin-left:5%;
+    background-color: transparent;
+
+
+    .App-content-intro {
+      position: relative;
+      width: 55%;
+      height: 15%;
+      left: 40%;
+      top:30%;
+      padding-right: 5%;
+      overflow:hidden;
+
+      h3 {
+        width: 100%;
+        color: $accentColor;
+        margin: 0;
+        font-size: calc(12px + 3.5vmin);
+        line-height: 110%;
+      }
+    }
+    
+}
+
+.App-about-me {
+  position: static;
+  width: 100%;
+  height: 100%;
+  right: 0;
+  background-color: $lightGray;
+}
+
+.App-bottom-footer {
+  position: static;
+  height: 100%;
+  width: 100%;
+  right: 0;
+
+}
+
+
+@media screen and (max-width: 300px) {
+  .App-content-aboutme h3 {
+    color: $accentColor;
+    margin: 0;
+    font-size: calc(20px);
+    left: 0;
+  }
+}
+
+.navActive {
+  opacity: 0;
+}
+
