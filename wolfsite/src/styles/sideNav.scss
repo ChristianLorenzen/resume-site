@@ -4,7 +4,7 @@ $accentColor:hsl(180, 100%, 50%);
 
 
 .App-header {
-    position: absolute;
+    position: relative;
 
     writing-mode: vertical-lr;
     text-orientation: upright;
@@ -16,19 +16,14 @@ $accentColor:hsl(180, 100%, 50%);
     flex-direction:row;
     align-items: center;
     justify-content: center;
-    float: left;
+    float: right;
     z-index: 5;
     font-size: calc(12px + 2vmin);
     color: 	$fontColor;
 
     .App-header-name {
       position: relative;
-      writing-mode: vertical-lr;
-      text-orientation: upright;
-      display: flex;
-      flex-direction:row;
-      align-items: center;
-      justify-content: center;
+
       margin: auto;
 
       h5 {

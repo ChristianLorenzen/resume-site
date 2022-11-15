@@ -7,10 +7,10 @@ const CardPanel = (props) => {
     if (props.images.length > 0) {
         return (
             <div>
-                <div className='card-panel-cont' >
-                    <div className='card-panel' style={{background: `url(${props.backgroundImage})`, backgroundSize: 'cover'}}>
+                <div id='panel-cur' className='card-panel-cont' style={{backgroundColor: props.backgroundColor, color: props.textColor}}>
+                    <div className='card-panel' style={{background: `url(${props.backgroundImage})`, backgroundSize: 'cover', backgroundColor: props.panelBackgroundColor, color: props.color}}>
                         {props.images.map((image, index) => (
-                            <Card image={image} key={index} index={index} section={"CardPanel"} style={{zIndex:'2'}}/>
+                            <Card image={image} key={index} index={index} section={"CardPanel"} style={{backgroundColor: props.cardBackgroundColor, color: props.cardTextColor}}/>
                         ))}
                     </div>
                 </div>

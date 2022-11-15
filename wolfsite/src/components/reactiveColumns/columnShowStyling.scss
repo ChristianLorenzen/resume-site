@@ -17,43 +17,32 @@ body {
   font-family: "Signika Negative", sans-serif, Arial;
 }
 
-
-.container {
-  width: 300%;
-  height: 100vh;
-  display: flex;
-  flex-wrap: nowrap;
-}
-
 .panel {
   width: 100%;
-  height: 100%;
-  display: flex;
-  flex-direction: column;
+  height: auto;
   font-weight: 600;
   font-size: 1.5em;
   text-align: center;
   color: white;
   position: relative;
   box-sizing: border-box;
-}
+  display: inline-block;
+  z-index: 0;
 
-
-.red {
-  background-color: #c82736;
-  
-  .red-title {
+  .title {
     position: relative;
     color: aqua;
     width: 100%;
-    height: 100%;
+    height: auto;
+    display: inline-block;
 
-    .red-title-sections {
+    .title-sections {
       position: relative;
       width: 100%;
       height: 100%;
       display: flex;
       flex-direction: row;
+      flex-wrap: wrap;
       justify-content: center;
       align-items: stretch;
       font-family: 'Bebas Neue', cursive;
@@ -68,10 +57,14 @@ body {
       */
       .section {
         flex: 1 1 0;
+        flex-wrap: wrap;
         position: relative;
         font-size: calc(8px + 1vmin);
-        max-width: calc(100% / 3);
+        max-width: calc(100% / 2);
+        min-height: 100vh;
         overflow: hidden;
+
+
 
         .section-title {
           font-size: calc(6px + 3vmin);
@@ -81,7 +74,7 @@ body {
           padding-left: 15%;
           padding-right: 15%;
           left: 0;
-          top:70%;
+          top:60%;
           z-index: 5;
 
           .stretch-text-wrapper {
@@ -106,12 +99,14 @@ body {
           height: 70%;
           max-height: 70%;
           width: 100%;
-          padding: 4% 1% 1% 1%;
+          padding: 150px 1% 1% 1%;
+          
 
           .section-info {
             display: flex;
             flex-direction: column;
             position: relative;
+            align-self: flex-start;
             height: 100%;
             width: 0;
             opacity: 0;
@@ -130,7 +125,7 @@ body {
               width: 100%;
               display: flex;
               flex-direction: column;
-              justify-content: space-between;
+              justify-content: flex-start;
   
               .details-upper {
                 padding: 5% 10% 0 10%;
@@ -139,93 +134,55 @@ body {
   
               .details-lower {
                 position: relative;
-                height: 20%;
+                height: auto;
+                min-height: 150px;
                 width: 100%;
                 display: flex;
                 justify-content: center;
-                align-items: center;
+                padding-top: calc(2% + 20px);
+                align-items: flex-start;
+
+
 
                 .details-button {
-                  justify-self: center;
-                  align-self: center;
-                  letter-spacing: 0.1em;
-                  cursor: pointer;
-                  font-weight: 400;
-                  line-height: 45px;
+                  position: relative;
+                  display: flex;
                   width: 50%;
                   height: 50%;
-                  position: relative;
+                  min-width: 100px;
+                  max-width: 200px;
+                  min-height: 40px;
+                  max-height: 80px;
+                  transition: 1s ease-in-out;
+                  background-color: black;
+                  justify-content: center;
+                  align-items: center;
                   text-decoration: none;
-                  text-transform: uppercase;
-                  text-align: center;
-                  background-color: antiquewhite;
+                  color: white;
+                  border: 2px solid black;
+                }
+
+                .details-button:hover {
+                  transition: .5s ease-in-out;
+                  color: black;
+                  background-color: white;
                 }
 
                 .card-title-learn-more:hover {
                   text-decoration: none;
-              }
-
-              .effectLight {
-                  color: #FFF;
-                  border: 4px solid #000;
-                  box-shadow:0px 0px 0px 1px #000 inset;
-                  background-color: #000;
-                  overflow: hidden;
-                  position: relative;
-                  transition: all 0.3s ease-in-out;
-              }
-
-              .effectLight:hover {
-                  border: 4px solid #666;
-                  background-color: #FFF;
-                  box-shadow: 0px 0px 0px 4px #EEE inset;
-              }
-
-              .effectLight span {
-                  justify-self: center;
-                  align-items: center;
-                  transition: all 0.2s ease-out;
-                  z-index: 2;
-              }
-
-              .effectLight:hover span{
-                  letter-spacing: 0.13em;
-                  color: #333;
-              }
-              
-              .effectLight:after {
-                  background: #FFF;
-                  border: 0px solid #000;
-                  content: "";
-                  height: 155px;
-                  left: -75px;
-                  opacity: .8;
-                  position: absolute;
-                  top: -50px;
-                  -webkit-transform: rotate(35deg);
-                          transform: rotate(35deg);
-                  width: 50px;
-                  transition: all 1s cubic-bezier(0.075, 0.82, 0.165, 1);/*easeOutCirc*/
-                  z-index: 1;
                 }
-                .effectLight:hover:after {
-                  background: #FFF;
-                  border: 20px solid #000;
-                  opacity: 0;
-                  left: 120%;
-                  -webkit-transform: rotate(40deg);
-                          transform: rotate(40deg);
-                }
+
               }
             }
           }
 
           .section-display {
             position: relative;
+            top: 0%;
             width: 100%;
             height: 100%;
             max-height: 100%;
-            padding: 3%;
+            padding: 0 3% 0 3%;
             will-change: padding;
 
             .card-image {
@@ -257,25 +214,24 @@ body {
           padding: 0;
         }
 
-        @media all and (min-width: 500px) { .section-title { font-size: 6vmin;} .section-info-title { font-size: calc(2px + 1vmin); }}
-        @media all and (min-width: 700px) { .section-title { font-size: 10vmin;} .section-info-title { font-size: calc(2px + 2vmin); }}
-        @media all and (min-width: 800px) { .section-title { font-size: 12vmin;} .section-info-title { font-size: calc(4px + 2vmin); }}
-        @media all and (min-width: 1000px) { .section-title { font-size: 14vmin;} .section-info-title { font-size: calc(6px + 3vmin); }}
-        @media all and (min-width: 1200px) { .section-title { font-size: 18vmin;} .section-info-title { font-size: calc(8px + 4vmin); }}
-        @media all and (min-width: 1400px) { .section-title { font-size: 22vmin;} .section-info-title { font-size: calc(10px + 5vmin); }}
-        @media all and (min-width: 1700px) { .section-title { font-size: 26vmin;} .section-info-title { font-size: calc(14px + 6vmin); }}
+        @media all and (min-width: 1600px) { .section-title { font-size: 20vmin;} .section-info-title { font-size: calc(8px + 4vmin); }}
+        @media all and (max-width: 1600px) { .section-title { font-size: 18vmin;} .section-info-title { font-size: calc(2px + 3vmin); }}
+        @media all and (max-width: 1200px) { .section-title { font-size: 14vmin;} .section-info-title { font-size: calc(2px + 3vmin); }}
+        @media all and (max-width: 1000px) { .section-title { font-size: 6vmin;} .section-info-title { font-size: calc(2px + 3vmin); }}
 
         .section-flex-box {
-          transition: .5s ease-in-out;
+          transition: 1s ease-in-out 1s;
+          padding-top: 80px;
 
           .section-info {
-            transition: all 1s ease-in-out 1s;
+            transition: width 1s ease-in-out 1s, opacity .5s ease-in-out 1.5s;
             width: 30%;
             opacity: 1;
           }
   
           .section-display {
             transition: .5s ease-in;
+            top: 0;
             transition-delay: 1.0s;
             padding: 0;
           }
@@ -284,6 +240,97 @@ body {
     }
   }
 }
+
+@media screen and (max-width: 1000px) {
+  .panel {
+    .title {
+      .title-sections {
+        .section {
+          min-width: calc(100%);
+          min-height: 75vh;
+
+          .section-title {
+            padding-left: 20%;
+            padding-right: 20%;
+          }
+
+          @media all and (max-width: 1000px) { .section-title { font-size: 13vmin;} .section-info-title { font-size: calc(6px + 3vmin); }}
+          @media all and (max-width: 800px) { .section-title { font-size: 12vmin;} .section-info-title { font-size: calc(4px + 2vmin); }}
+          @media all and (max-width: 700px) { .section-title { font-size: 11vmin;} .section-info-title { font-size: calc(2px + 2vmin); }}
+          @media all and (max-width: 500px) { .section-title { font-size: 10vmin;} .section-info-title { font-size: calc(2px + 3vmin); }}
+          @media all and (max-width: 400px) { .section-title { font-size: 8vmin;} .section-info-title { font-size: calc(2px + 3vmin); }}
+          @media all and (max-width: 300px) { .section-title { font-size: 6vmin;} .section-info-title { font-size: calc(2px + 3vmin); }}
+
+          .section-flex-box{
+            flex-direction: column-reverse;
+            min-height: 80%;
+
+            .section-info {
+              flex-direction: column;
+              height: 40%;
+              min-width: 100%;
+              
+  
+              .section-info-title {
+                justify-self: center;
+                align-self: center;
+                width: 50%;
+              }
+  
+              .section-info-details {
+                flex-direction: column;
+
+    
+                .details-upper {
+                  padding: auto;
+                  min-height: calc(100% - 50px);
+                  justify-self: center;
+                  align-self: center;
+                  text-align: center;
+                }
+    
+                .details-lower {
+                  min-height: 50px;
+                  height: auto;
+                  justify-self: flex-start;
+                  align-self: flex-start;
+  
+                }
+              }
+            }
+            .section-display {
+              top:0%;
+              width: auto;
+              height: auto;
+              max-height: 93%;
+  
+            }
+          }
+        }
+
+        .section:hover {
+          .section-title {
+            transition-delay: 1s;
+            top: 80%;
+            height: 20%;
+          }
+          .section-flex-box {
+            .section-info {
+              padding-top: 2%;
+            }
+            .section-display {
+              max-height: 90%;
+              padding-top: 2%;
+              will-change: padding;
+  
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
 
 
 .transition-1half-ease {
@@ -317,16 +364,17 @@ body {
   transition-delay: .5s;
 }
 
-.grey {
-  background-color: #777;
+.column-black {
+  background-color: black;
+  color: pink;
 }
 
-.purple {
-  background-color: #8d3dae;
+.column-white {
+  background-color: white;
   color: black;
 }
 
-.red {
-  background-color: #c82736;
+.column-red {
+  background-color: #9DC7C8;
   color: white;
 }

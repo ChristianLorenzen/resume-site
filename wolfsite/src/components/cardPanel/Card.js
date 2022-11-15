@@ -10,10 +10,21 @@ const Card = (props) => {
     const [style, setStyle] = useState([])
     const [offsets, setOffsets] = useState( {top: 0,left: 0})
     const [size,setSize] = useState({width:0,height:0})
-    const [hoverProperties, setHoverProperties] = useState({perspectiveAmount: 1000, tiltAmount:6, scale:1.1});
+    const [hoverProperties, setHoverProperties] = useState({perspectiveAmount: 1500, tiltAmount: 6, scale:1.05});
     const [hoverStyle, setHoverStyle] = useState({transform: ''})
-    const [clickStyle, setClickStyle] = useState({width: '85%',height: '90%',position:'fixed',top: '5%',margin: 'auto',padding: '0', zIndex:'5'})
+    const [clickStyle, setClickStyle] = useState()
     const [isClicked, setIsClicked] = useState(false);
+
+    const [cardPanelEl, setCardPanelEl] = useState()
+    const [cardEl, setCardEl] = useState()
+
+
+    useEffect(() => {
+        setStyle(props.style)
+        setCardPanelEl(document.getElementById("panel-cur"))
+        setCardEl(document.getElementById(props.section+props.index))
+
+    }, [])
 
     useEffect(() => {
         const cardElement = document.getElementById(props.section+props.index);
@@ -33,9 +44,11 @@ const Card = (props) => {
     }, [props.section, props.index, props.hoverProperties, props.style, hoverProperties]);
 
     const refreshOffsets = () => {
-        const cardElement = document.getElementById(props.section+props.index);
-        const top = cardElement.offsetTop;
-        const left = cardElement.offsetLeft;
+        const top = cardEl.offsetTop + cardPanelEl.getBoundingClientRect().top;
+        const left = cardEl.offsetLeft;
+        const width = cardEl.offsetWidth;
+        const height = cardEl.offsetHeight;
+        setSize({width,height})
         setOffsets({top,left})
     }
 
@@ -47,13 +60,12 @@ const Card = (props) => {
             const centerX = offsets['left'] + cardWidth/2;
             const centerY = offsets['top'] + cardHeight/2;
             const mouseX = pageX - centerX;
-            const mouseY = (pageY - window.innerHeight) - centerY;
+            const mouseY = (pageY - window.scrollY) - centerY;
             const rotateX = (hoverProperties['tiltAmount'] * mouseY/(cardHeight/2)).toFixed(1);
             const rotateY = (-hoverProperties['tiltAmount'] * mouseX/(cardWidth/2)).toFixed(1);
             const hoverUpdate = {transform : `perspective(${hoverProperties['perspectiveAmount']}px) rotateX(${rotateX}deg) rotateY(${rotateY}deg)
                                     scale3d(${hoverProperties['scale']},${hoverProperties['scale']},${hoverProperties['scale']})`,
                                 zIndex:'3',
-                                transitionDuration: '1s ease'
             };
             setHoverStyle(hoverUpdate);
 
@@ -61,10 +73,6 @@ const Card = (props) => {
             setStyle(fullStyle);
         }
     }
-
-    useEffect(() => {
-        console.log(isClicked)
-    }, [isClicked])
 
     const MouseExit = () => {
         setIsClicked(isClicked => false)
@@ -83,7 +91,7 @@ const Card = (props) => {
     }
 
     return (
-        <div className="card" style={style} key={props.index} id={props.section+props.index} onMouseMove={MouseHover} onMouseLeave={MouseExit} onClick={() =>openCardImg()} ref={cardRef}>
+        <div className={isClicked ? "card active" : "card"} style={style} key={props.index} id={props.section+props.index} onMouseMove={MouseHover} onMouseLeave={MouseExit} onClick={() =>openCardImg()} ref={cardRef}>
             <div className="card-title">
                 <div className='card-title-left'>
                     {isClicked ? <p className='card-title-title-text-clicked'>{props.image['title']}</p> : <p className='card-title-title-text'>{props.image['title']}</p>}
@@ -97,15 +105,15 @@ const Card = (props) => {
                 {/*If there is a video/bigVideo, add it to the card */}
                 {(props.image['video'] !== '' && !isClicked) ?         
                     <video loop autoPlay muted alt="cardImage" className='card-image'>
-                        <source src={props.image['video']} type="video/mp4" />
+                        <source src={props.image['video']} loading="lazy" type="video/mp4" />
                     </video> 
                 : null}
                 {(props.image['video'] !== '' && isClicked) ?         
                     <video loop autoPlay muted alt="cardImage" className='card-image'>
-                        <source src={props.image['bigVid']} type="video/mp4" />
+                        <source src={props.image['bigVid']} loading="lazy" type="video/mp4" />
                     </video> 
                 : null}
-                {props.image['src'] && <img src={props.image['src']} alt="cardImage" className='card-image' />}
+                {props.image['src'] && <img src={props.image['src']} loading="lazy" alt="cardImage" className='card-image' />}
             </div>
         </div>
     )

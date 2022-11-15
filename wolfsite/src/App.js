@@ -4,9 +4,11 @@ import './styles/App.scss';
 import { Router, Routes, Route, Link } from 'react-router-dom';
 import MainPage from './components/projects/HomePage';
 import IdleRPG from './components/projects/IdleRPG';
-import AutoTrader from './components/projects/AutoTrader';
 import VoxelRender from './components/projects/VoxelRenderer';
 import Flyer from './components/projects/Flyer';
+import OtherWork from './components/projects/OtherWork';
+import Graphics from './components/projects/Graphics';
+import Applications from './components/projects/Applications';
 
 
 const App = () => {
@@ -87,6 +89,9 @@ const App = () => {
       <Route path='/IdleRPG' element={<IdleRPG />} />
       <Route path='/VoxelRenderer' element={<VoxelRender />} />
       <Route path='/Flyer' element={<Flyer />} />
+      <Route path="/Graphics" element={<Graphics />}/>
+      <Route path="/Applications" element={<Applications />}/>
+      <Route path="/OtherWork" element={<OtherWork />}/>
       <Route path="*" element={<NoMatch />} />
     </Routes>
   );

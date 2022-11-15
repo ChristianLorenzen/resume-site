@@ -1,19 +1,14 @@
 import React, {useEffect, useState, useRef} from 'react'
-import '../../styles/App.scss';
+import { Link } from 'react-router-dom';
+import {motion} from 'framer-motion';
+import '../../styles/HomePage.scss';
 import {gsap} from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import CardPanel from '../cardPanel/CardPanel.js';
-import cam1 from '../../media/cam1.jpg';
-import cam2 from '../../media/cam2.jpg';
-import cam3 from '../../media/cam3.jpg';
-import hillArea from '../../media/hillArea.png';
-import idleRPGMerchant from '../../media/IdleRPGMerchant.mp4';
-import autoTraderInterface from '../../media/autoTraderInterface.mp4';
-import autoTraderShow from '../../media/autoTraderShow.mp4';
-import grasslandsGL from '../../media/grasslandsOPENGL.mp4';
-import mountainsGL from '../../media/mountainsOPENGL.mp4';
+import mountainsGL from '../../media/GraphicsPage/mountainsOPENGL.mp4';
 import SideNav from '../navBar/sideNav';
 import ColumnShowcase from '../reactiveColumns/columnShow';
+import wLogo from '../../media/logo.png'
+
 
 const MainPage = () => {
   const headerRef = useRef(null)
@@ -27,7 +22,7 @@ const MainPage = () => {
     gsap.to(element.querySelector(".App-content-intro"),
 
       {
-        y:'50vh',
+        y:'50%',
         duration: 2,
         opacity: 0.0,
         scrollTrigger: {
@@ -36,7 +31,7 @@ const MainPage = () => {
           end: 'bottom center',
           scrub:'true',
           scrub:2,
-          opacity: 0.0
+          opacity: 0.0,
         }
       },
     );
@@ -58,49 +53,87 @@ const MainPage = () => {
       })
     })
     return (
-      <div ref={ref}>
+      <div ref={ref} className={props.className}>
         <h3>
-          {props.text}
+          {props.title}
         </h3>
+        <p style={{color: 'white', fontSize: 'calc(10px + 1.0vmin)'}}>
+          {props.text}
+        </p>
       </div>
     )
   }
 
-  {/* 
-  THE IDLERPGMERCHANT VIDEO HAS BABYTRON AUDIO STILL IN BACKGROUND. REMOVE
-  */}
-  const imageList = [
-    {title: "0-01: Generations", desc: "Game currently in development", 
-            fullDesc: "RPG game focused on idle mechanics. Grow and manage a tight knit group of workers to help you build up your villiage.",
-            src: '', url: '/IdleRPG', video: idleRPGMerchant, bigVid: idleRPGMerchant},
-    {title: '0-02: Flyer', desc:"Connects brokerage trades to Discord for notifications", 
-            fullDesc: 'AutoTrader allows a user to connect to their Interactive Brokers account to send automated trade notifications to a Discord channel.',
-            src: '', url: '/Flyer', video: autoTraderInterface, bigVid: autoTraderShow},
-    {title: '0-03: Voxel Renderer', desc:"OpenGL based voxel rendering", 
-            fullDesc: "OpenGL based voxel rendering with Perlin Noise based terrain and vegetation generation with unique biomes",
-            src: '', url: '/VoxelRenderer',  video: grasslandsGL, bigVid: mountainsGL},
-    {title: 'bullet', desc:"PlanetScene", src: cam2, url: '', fullDesc: '', video: ''},
-    {title: 'industry', desc:"PlanetScene", src: cam3, url: '', fullDesc: '', video: ''},
-  ];
 
   return (
       <div className="App" ref={headerRef}>
-        <div className='App-top-content' style={{}}>
+        <div className='App-home-icon'>
+          <Link to="/" ><img src={wLogo} alt="logo" className='App-home-icon-styling'/></Link>
+        </div>
+        <div className='App-top-content'>
           <SideNav name={'wolfgang'} />
           <div className='App-content-intro'>
-                <SlideLeftH3 text={'Graphics, Full-Stack, Financial, and Optical Applications'}/>
-                <p className='App-content-intro-intro'>Hey! My name is Christian but I often go by wolfgang online. I graduated from Purdue University in May 2022 with a major 
-                  in Computer Science with a focus on computer graphics and a minor in finance. I've been working at Wavefront Analysis Systems since January 2020
-                  where we have been pushing towards a new future for optical measurement.
-                </p>
+                <SlideLeftH3 className='App-content-intro-text' title={'Graphics, Full-Stack, Financial, and Optical Applications'} 
+                text={`Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Amet consectetur adipiscing elit ut. Bibendum ut tristique et egestas quis. Nisi scelerisque eu ultrices vitae auctor eu augue. Ante in nibh mauris cursus mattis molestie a iaculis. Rhoncus mattis rhoncus urna neque viverra justo. Ac placerat vestibulum lectus mauris ultrices eros in cursus. `}
+                />
+                {/*<div className='eva-testing'>
+                  <h2 className='eva-testing-header'>NEON</h2>
+                  <h2 className='eva-testing-header'>GENESIS</h2>
+                  <h1 className='eva-testing-header'>EVANGELION</h1>
+                </div>*/}
           </div>     
         </div>
-        <div className="App-about-me">
-          <CardPanel images={imageList} backgroundImage={cam2}/>
+        <div className='App-top-content-transition-showcase'>
+          <span></span>
+          <motion.div
+            className='about-likes about-hover'
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1,  transition: {duration: 1} }}
+          />
+          <motion.div
+            className='about-content about-hover'
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1,  transition: {duration: 1} }}
+          />
+          <motion.div
+            className='about-experience about-hover'
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1, transition: {duration: 1} }}
+
+          />
         </div>
-        <div className='App-bottom-footer'>
+        <div>
           <ColumnShowcase />
         </div>
+        <div className='App-top-content-showcase-transition'>
+          <div className='App-contact-top-text'>
+            <p>I love to talk ideas. Whether it's design, software development, new computer hardware,
+               general subjects, or just questions, I'm always open to talk. </p>
+          </div>
+
+          <div className='spacer'>
+            <video src={mountainsGL} loading="lazy" loop autoPlay muted />
+          </div>
+          <div className='contact-link-horizonal-bar-wrapper'>
+            <div className='contact-link-horizontal-bar'>
+              <a href="linkedin.com">Linkedin</a>
+              <a href='github.com'>Github</a>
+              <a href='twitter.com'>Twitter</a>
+            </div>
+          </div>
+          <div className='home-section-title' >
+            <div className='home-stretch-text-wrapper'>
+              <div>C</div>
+              <div>O</div>
+              <div>N</div>
+              <div>T</div>
+              <div>A </div>
+              <div>C</div>
+              <div>T</div>
+            </div>
+          </div>
+        </div>
+
       </div>
   );
 }
