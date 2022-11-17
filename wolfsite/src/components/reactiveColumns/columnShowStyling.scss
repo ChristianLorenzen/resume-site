@@ -204,11 +204,11 @@ body {
       .section:hover {
         flex-grow: 8;
         max-width: 100%;
-        transition: all 1s ease-in-out 1s;
+        transition: all 1s ease-in-out .5s;
 
         .section-title {
           transition: 1s ease-in-out;
-          transition-delay: 1s;
+          transition-delay: .5s;
           top: 70%;
           height: 30%;
           padding: 0;
@@ -220,11 +220,11 @@ body {
         @media all and (max-width: 1000px) { .section-title { font-size: 6vmin;} .section-info-title { font-size: calc(2px + 3vmin); }}
 
         .section-flex-box {
-          transition: 1s ease-in-out 1s;
+          transition: 1s ease-in-out .5s;
           padding-top: 80px;
 
           .section-info {
-            transition: width 1s ease-in-out 1s, opacity .5s ease-in-out 1.5s;
+            transition: width .5s ease-in-out .5s, opacity .5s ease-in-out 1s;
             width: 30%;
             opacity: 1;
           }
