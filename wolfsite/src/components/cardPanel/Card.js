@@ -90,6 +90,13 @@ const Card = (props) => {
         }
     }
 
+    const RedirectPage = (url) => {
+        React.useEffect(() => {
+            console.log(url)
+
+        }, [])
+    }
+
     return (
         <div className={isClicked ? "card active" : "card"} style={style} key={props.index} id={props.section+props.index} onMouseMove={MouseHover} onMouseLeave={MouseExit} onClick={() =>openCardImg()} ref={cardRef}>
             <div className="card-title">
@@ -98,7 +105,7 @@ const Card = (props) => {
                     {(isClicked && props.image['fullDesc'] !== '') ? <p className='card-title-full-desc'>{props.image['fullDesc']} </p> : <p className='card-title-desc'>{props.image['desc']}</p>}
                 </div>
                 <div className='card-title-right'>
-                    {props.image['url'] !== '' && isClicked && <Link to={props.image['url']} className='card-title-learn-more effectLight'><span>Learn More</span></Link>}
+                    {props.image['url'] !== '' && isClicked && <a target="_blank" rel="noopener noreferrer" href={props.image['url']} className='card-title-learn-more effectLight'><span>Learn More</span></a>}
                 </div>
             </div>
             <div className="card-image-cont">
@@ -108,7 +115,7 @@ const Card = (props) => {
                         <source src={props.image['video']} loading="lazy" type="video/mp4" />
                     </video> 
                 : null}
-                {(props.image['video'] !== '' && isClicked) ?         
+                {(props.image['bigVid'] !== '' && isClicked) ?         
                     <video loop autoPlay muted alt="cardImage" className='card-image'>
                         <source src={props.image['bigVid']} loading="lazy" type="video/mp4" />
                     </video> 

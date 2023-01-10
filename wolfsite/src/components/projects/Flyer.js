@@ -12,6 +12,9 @@ import leaves1 from '../../media/Flyer/leaves1.svg';
 import leaves2 from '../../media/Flyer/leaves2.svg';
 import leaves3 from '../../media/Flyer/leaves3.svg';
 import AutoTrader from '../../media/ApplicationsPage/AutoTrader.png';
+import FlyerMSGCreate from '../../media/Flyer/MsgCreator.png';
+import FlyerMSGManager from '../../media/Flyer/MsgManager.png';
+import HomePage from '../../media/Flyer/HomePage.png';
 
 const Flyer = () => {
   const scrollRef = useRef(null)
@@ -93,24 +96,24 @@ const Flyer = () => {
         <motion.section ref={scrollRef} style={{ x: spring, height: '100vh'}} className="panels-container">
           <div className="panels" style={{backgroundImage: `url(${wideTab})`, backgroundSize: '100% 100%'}}>
               <div className="panel-title transparent-background">
-                  <motion.div style={{backgroundImage: `url(${leaves1})`, backgroundSize: '100% 100%', x: transformFast, position: 'absolute', top:'0', left:'0', width:'100%', height: window.innerHeight, backgroundSize: 'cover'}} />
-                  <motion.div style={{backgroundImage: `url(${leaves3})`, backgroundSize: '100% 100%', x: transformFastRight , position: 'absolute', top:'0', left:'0', width:'100%', height: window.innerHeight, backgroundSize: 'cover'}} />
+                  <motion.div style={{backgroundImage: `url(${leaves1})`, backgroundSize: '100% 100%', x: transformFast, position: 'absolute', top:'0', left:'0', width:'100%', height: window.innerHeight, backgroundSize: 'cover', zIndex: '0'}} />
+                  <motion.div style={{backgroundImage: `url(${leaves3})`, backgroundSize: '100% 100%', x: transformFastRight , position: 'absolute', top:'0', left:'0', width:'100%', height: window.innerHeight, backgroundSize: 'cover', zIndex: '0'}} />
                   <div className="title-section font-color-white header-1-min header-2-min p-min" >
                       <h1>Flyer</h1>
                       <h2>The market moves fast. Flyer moves faster</h2>
                       <p>Flyer is an automated brokerage announcement system to be used with Discord.
                                       It allows you to connect a brokerage account, and when trades are placed,
-                                      it automatically sends notifications to Discord, allowing for quick public announcements.
+                                      it automatically sends out notifications, allowing for quick public announcements.
                       </p>
-                      <div className='blue-download'>
-                          <a >
+                      {/*<div className='blue-download'>
+                          <a href="#price_download_section">
                             <span className='text'>Download</span>
                             <span className="line -right"></span>
                             <span className="line -top"></span>
                             <span className="line -left"></span>
                             <span className="line -bottom"></span>
                           </a>
-                      </div>
+  </div>*/}
                   </div>
                   <motion.div className='flyer-panel-1' style={{x: transformCrossPagePixels, y: transformVerticalSin }} >
                     {/*<img src={flyerLogo} />*/}
@@ -127,23 +130,23 @@ const Flyer = () => {
                         <h5 className='header-5-min' style={{width: '60%'}}>Open, connect and forget. Two clicks gets you up and running and Flyer can be hidden in the background out of sight.</h5>
                       </div>
                       <motion.div className="float float-box float-left hover left box-shadow-medium-black padding-1 border-radius-10 " style={{ background: 'salmon' }}>
-                        <div className="flex flex-col w60 ">
+                        <div className="flex flex-col w60">
                           <h1 className="header-1-min">Send What You Want</h1>
-                          <p className="p-min">Flyer allows you send custom formatted message or use the default message. 
+                          <p className="p-min min-height-75px">Flyer allows you send custom formatted message or use the default message. 
                             You can choose what type of trades to send to each Discord channel you add and what data from the trade is shown.
                           </p>
                         </div>
                         <div className="flex flex-col">
-                          <img src={AutoTrader} style={{width:'100%', height: '100%', objectFit:'scale-down', overflow: 'hidden', position: 'relative' }}/>
+                          <img src={FlyerMSGCreate} style={{width:'100%', height: '100%', objectFit:'scale-down', overflow: 'hidden', position: 'relative' }}/>
                         </div>
                       </motion.div>
-                      <motion.div className="float float-box float-right hover up box-shadow-medium-black padding-1 border-radius-10" style={{  background: 'grey' }}>
-                        <div className="flex flex-col w60 ">
+                      <motion.div className="float float-box float-right hover up box-shadow-medium-black padding-1 border-radius-10 hover-mobile-row" style={{  background: 'grey' }}>
+                        <div className="flex flex-col w60">
                           <h1 className="header-1-min">Send When You Want</h1>
-                          <p className="p-min">With easy access on both the home screen and the taskbar menu, you can pause notifications at any time allowing you to trade without notifying others.</p>
+                          <p className="p-min min-height-75px">With easy access on both the home screen and the taskbar menu, you can pause notifications at any time allowing you to trade without notifying others.</p>
                         </div>
                         <div className="flex flex-col">
-                          <img src={AutoTrader} style={{width:'100%', height: '100%', position: 'relative', objectFit:'scale-down', overflow: 'hidden', }}/>
+                          <img src={HomePage} style={{width:'100%', height: '100%', position: 'relative', objectFit:'scale-down', overflow: 'hidden', }}/>
                         </div>
                       </motion.div>
                   </div>
@@ -157,15 +160,18 @@ const Flyer = () => {
                             When settings up a channel connection, Flyer allows you to specify between normal and option trading.
                             Then when trades are placed, Flyer filters the trade and only sends messages to a channel when the trade type is correct.
                           </p>
+                          <div className="flex flex-col min-height-75px">
+                          <img src={FlyerMSGManager} style={{width:'100%', height: '100%', position: 'relative', objectFit:'scale-down', overflow: 'hidden', }}/>
+                        </div>
                         </div>
                   </div>
-                  <div className='grid-col-start-3 grid-col-span-3 grid-row-start-1 grid-row-span-3 flex flex-col  align-content-center justify-content-between width-100 height-100 max-width-100'>
+                  <div className='grid-col-start-3 grid-col-span-3 grid-row-start-1 grid-row-span-3 flex flex-col  align-content-center justify-content-between width-100 height-100 max-width-100' id="price_download_section">
                     <div className="grid-col-start-4 grid-col-span-2 grid-row-start-1 grid-row-span-2 flex flex-col align-content-center padding-1 width-80 flex-wrap">
                       <label className="collapsible-cont">
                         <input type="checkbox" checked={faqOpen[0]} onChange={() => updateFAQ(0)}/>
                         <div className="show-cont">
                           <span className='collapseItem header-3-min'><h3>Does Flyer Store My Information?</h3></span>
-                          <span className='arrowDown'>&gt;</span>
+                          {/*<span className='arrowDown'>&gt;</span>*/}
                         </div>
                         <div className='collapsedItem p-min'>
                           <p>
@@ -179,7 +185,7 @@ const Flyer = () => {
                         <input type="checkbox" checked={faqOpen[1]} onChange={() => updateFAQ(1)} />
                         <div className="show-cont">
                           <span className='collapseItem header-3-min'><h3>Why Do I Need Flyer?</h3></span>
-                          <span className='arrowDown'>&gt;</span>
+                          {/*<span className='arrowDown'>&gt;</span>*/}
                         </div>
                         <div className='collapsedItem p-min'>
                             <p>
@@ -192,7 +198,7 @@ const Flyer = () => {
                         <input type="checkbox" checked={faqOpen[2]} onChange={() => updateFAQ(2)}/>
                         <div className="show-cont">
                           <span className='collapseItem header-3-min'><h3>What Brokerages Work With Flyer?</h3></span>
-                          <span className='arrowDown'>&gt;</span>
+                          {/*<span className='arrowDown'>&gt;</span>*/}
                         </div>
                         <div className='collapsedItem p-min'>
                           <p>
@@ -204,7 +210,7 @@ const Flyer = () => {
                         <input type="checkbox" checked={faqOpen[3]} onChange={() => updateFAQ(3)}/>
                         <div className="show-cont">
                           <span className='collapseItem header-3-min'><h3>Where Can I Request Features?</h3></span>
-                          <span className='arrowDown'>&gt;</span>
+                          {/*<span className='arrowDown'>&gt;</span>*/}
                         </div>
                         <div className='collapsedItem p-min'>
                           <p>

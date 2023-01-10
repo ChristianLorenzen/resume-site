@@ -23,11 +23,12 @@ const TopNav = (props) => {
     return (
 
         <div className={menuToggled ? 'top-nav-container active' : 'top-nav-container'} style={(props.color === 'black' && menuToggled) ? {backgroundColor: 'white'} : {}}>
-            <div className="top-nav-home-icon">
-                <Link to='/' > <img src={Logo} className='home-icon'/></Link>
-            </div>
             <div className={menuToggled ? 'top-nav-link-layout active' : 'top-nav-link-layout'} >
                 <div className={menuToggled ? 'screenBackground' : ''} />
+                <Link to="/" className="top-nav-link-layout-element" style={{'color': props.color}}>
+                    <p>HOME</p>
+                    <span className="el-line" style={{background: props.color}} />
+                </Link>
                 <Link to="/Graphics" className="top-nav-link-layout-element" style={{'color': props.color}}>
                     <p>GRAPHICS</p>
                     <span className='el-line' style={{background: props.color}}/>

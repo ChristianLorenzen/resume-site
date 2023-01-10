@@ -2,11 +2,10 @@ import React from "react";
 import CardPanel from '../cardPanel/CardPanel.js';
 import cam1 from '../../media/cam1.jpg';
 import idleRPGMerchant from '../../media/GraphicsPage/IdleRPGMerchant.mp4';
-import grasslandsGL from '../../media/GraphicsPage/grasslandsOPENGL.mp4';
-import mountainsGL from '../../media/GraphicsPage/mountainsOPENGL.mp4';
 import desertGL from '../../media/GraphicsPage/DESERTRUN.mp4';
 import postProcessing from '../../media/GraphicsPage/TEXTUREPOSTPROCESSING.mp4';
 import sinWave from '../../media/GraphicsPage/SINWAVESIMUL.mp4';
+import GerstnerWaves from '../../media/GraphicsPage/GerstnerWaves.mp4';
 import TopNav from '../navBar/TopNav';
 import '../../styles/WorkCardPanelScreens.scss';
 
@@ -17,24 +16,21 @@ const Graphics = () => {
     const imageList = [
         {title: "0-01: Generations", desc: "Currently in development using the Unity game engine.", 
                 fullDesc: "RPG game focused on idle mechanics. Grow and manage a tight knit group of workers to help you build up your villiage. Currently being developed using the Unity game engine and written in C#",
-                src: '', url: '/IdleRPG', video: idleRPGMerchant, bigVid: idleRPGMerchant},
+                src: '', url: 'https://novaze.itch.io/theforevergeneration', video: idleRPGMerchant, bigVid: idleRPGMerchant},
         {title: '0-02: Voxel Renderer', desc:"Perlin noise based voxel and biome generation", 
                 fullDesc: "C++ and OpenGL based voxel rendering with Perlin Noise based terrain and vegetation generation.",
                 src: '', url: '',  video: desertGL, bigVid: desertGL},
         {title: '0-03: SIN WAVE', desc:"2D wave texturing with multi layer sin waves", 
                 fullDesc: 'Written in C++ and glsl, while using OpenGL in combination with GLUT for the GUI. Uses a combination of sin waves with controllable parameters to create abstract wave like graphics.',
                 src: '', url: '', video: sinWave, bigVid: sinWave},
-        {title: '0-04: POST PROCESSING', desc:"Post processing effects generated in C++ OpenGL", 
+        {title: '0-04: Gerstner Wave', desc:"3D Gerstner Wave simulation shader", 
+                fullDesc: 'Rendered in the Unity Game engine, shader for Gerstner wave simulation. Allows for multi wave controls with depth based Albedo, customizable refraction, and intersection based foam generation.',
+                src: '', url: '', video: GerstnerWaves, bigVid: GerstnerWaves},
+        {title: '0-05: POST PROCESSING', desc:"Post processing effects generated in C++ OpenGL", 
                 fullDesc: "Written in C++, glsl, and using OpenGL with GLUT and GLEW.",
                 src: '', url: '', video: postProcessing, bigVid: postProcessing},
     ];
-    {/*'https://mojimo.jp/manga/'
-    'https://codepen.io/renanpvaz/pen/rGxzqE'
-    https://www.shapedivider.app/
-    https://app.haikei.app/
-    https://www.mn-stud.io/
-    https://side-scroller.webflow.io/
-    */}
+
 
     const backgroundColor = "black";
     const textColor = 'white';

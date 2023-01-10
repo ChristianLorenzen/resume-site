@@ -160,7 +160,7 @@ body {
       .line {
         position: absolute;
         background: $color;
-    
+
         &.-right,
         &.-left {
           width: $thick;
@@ -204,7 +204,7 @@ body {
     
       a:hover,
       a:active {
-    
+        border-radius: 10px;
         .text {
           transform: translate3d(0,0,0);
           transition: transform 0.6s cubic-bezier(.2,0,0,1) 0.4s;
