@@ -1,33 +1,24 @@
 import React from "react";
 import CardPanel from '../cardPanel/CardPanel.js';
-import cam1 from '../../media/cam1.jpg';
-import cam2 from '../../media/cam2.jpg';
-import cam3 from '../../media/cam3.jpg';
-import darkBackground from '../../media/darkBackground.jpg';
 import redBlue from '../../media/redblueAb.jpg';
-import idleRPGMerchant from '../../media/GraphicsPage/IdleRPGMerchant.mp4';
-import autoTraderInterface from '../../media/ApplicationsPage/autoTraderInterface.mp4';
-import autoTraderShow from '../../media/ApplicationsPage/autoTraderShow.mp4';
-import grasslandsGL from '../../media/GraphicsPage/grasslandsOPENGL.mp4';
-import mountainsGL from '../../media/GraphicsPage/mountainsOPENGL.mp4';
+import DNSCode from '../../media/OtherWorkPage/DNSMonitorCode.png';
+import CustomTerminalVid from '../../media/OtherWorkPage/TerminalShow.mp4';
+import CustomMalloc from '../../media/OtherWorkPage/CustomMalloc.png';
 import TopNav from '../navBar/TopNav';
 import '../../styles/WorkCardPanelScreens.scss';
 
 const OtherWork = () => {
-    {/* 
-    THE IDLERPGMERCHANT VIDEO HAS BABYTRON AUDIO STILL IN BACKGROUND. REMOVE
-    */}
+
     const imageList = [
-        {title: "0-01: Generations", desc: "Game currently in development", 
-                fullDesc: "RPG game focused on idle mechanics. Grow and manage a tight knit group of workers to help you build up your villiage.",
-                src: '', url: '/IdleRPG', video: idleRPGMerchant, bigVid: idleRPGMerchant},
-        {title: '0-02: Flyer', desc:"Connects brokerage trades to Discord for notifications", 
-                fullDesc: 'AutoTrader allows a user to connect to their Interactive Brokers account to send automated trade notifications to a Discord channel.',
-                src: '', url: '/Flyer', video: autoTraderInterface, bigVid: autoTraderShow},
-        {title: '0-03: Voxel Renderer', desc:"OpenGL based voxel rendering", 
-                fullDesc: "OpenGL based voxel rendering with Perlin Noise based terrain and vegetation generation with unique biomes",
-                src: '', url: '/VoxelRenderer',  video: grasslandsGL, bigVid: mountainsGL},
-        {title: 'bullet', desc:"PlanetScene", src: cam2, url: '', fullDesc: '', video: ''},
+        {title: "0-01: DNS Attack Suppression", desc: "Automatic DNS attack recognition and prevention", 
+                fullDesc: "Using simulated networks with the p4 programming ecosystem. Rule based DNS attack prevention.",
+                src: DNSCode, url: '', video: '', bigVid: ''},
+        {title: '0-02: Linux Custom Terminal', desc:"Built up custom terminal with lexer, piped commands, inline-editing, process handling, and more.", 
+                fullDesc: 'Custom terminal including features such as subterminals, background process handling, signal handling, multi command lexer, customization, and more. Written in C utilizing Bison for the lexer.',
+                src: '', url: '', video: CustomTerminalVid, bigVid: CustomTerminalVid},
+        {title: '0-02: Linux Custom Memory Allocator', desc:"Reimplemented linux malloc allowing for customized ruleset for memory allocation and handling.", 
+                fullDesc: 'Written in pure C, it replecates the basic function malloc in a unix environment. Utilizes a multi-level linked list for priority/size based efficient allocation of new memory blocks.',
+                src: CustomMalloc, url: '', video: '', bigVid: ''},
     ];
 
     const backgroundColor = 'rgb(206, 45, 79)';

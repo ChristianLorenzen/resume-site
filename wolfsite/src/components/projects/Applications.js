@@ -1,10 +1,11 @@
 import React from "react";
 import CardPanel from '../cardPanel/CardPanel.js';
 import cam2 from '../../media/cam2.jpg';
-import autoTraderInterface from '../../media/ApplicationsPage/autoTraderInterface.mp4';
-import autoTraderShow from '../../media/ApplicationsPage/autoTraderShow.mp4';
-import WasSite from '../../media/ApplicationsPage/WASSite.mp4';
+import autoTraderInterface from '../../media/ApplicationsPage/FlyerShow.mp4';
+import autoTraderShow from '../../media/ApplicationsPage/FlyerOverviewQuick_muted.mp4';
+import WasSite from '../../media/ApplicationsPage/WASSite_compressed_muted.mp4';
 import PhaseViewWaf from '../../media/ApplicationsPage/PhaseViewerWafer.png'
+import SuperbrainSmall from '../../media/ApplicationsPage/SuperbrainSmallVid.mp4'
 import SuperbrainSecurities from '../../media/ApplicationsPage/SuperbrainSecurities.mp4';
 import TopNav from '../navBar/TopNav';
 
@@ -21,13 +22,13 @@ const Applications = () => {
                 src: '', url: '/Flyer', video: autoTraderInterface, bigVid: autoTraderShow},
         {title: '0-02: Superbrain Securities', desc:"Automated trading platform", 
                 fullDesc: 'Fully created Database/Backend/Frontend systems which allowed Alpaca trading platform users to connect their accounts. Once connected, we used multiple trading algorithms to determine best stock for users and make purchases on their accounts.',
-                src: '', url: '', video: SuperbrainSecurities, bigVid: SuperbrainSecurities},
+                src: '', url: '', video: SuperbrainSmall, bigVid: SuperbrainSecurities},
         {title: '0-03: Wavefront Analysis Systems', desc:"Public facing site for Wavefront Analysis Systems", 
                 fullDesc: "To further cement our ambitious goals, I was charged with putting together a simple site to explain what Totagraphy is.",
                 src: '', url: 'https://was.nyc',  video: WasSite, bigVid: WasSite},
         {title: '0-04: PhaseViewer', desc:"Web based visualizer for recovered phase images.", 
                 fullDesc: "React based webapp for 3D visualization of images. Depth based 3D visualized used for phase information recovered from a Wavefront. Used leva for controls, and react-three/plotly for rendering.",
-                src: PhaseViewWaf, url: '/Test',  video: '', bigVid: ''},
+                src: PhaseViewWaf, url: '',  video: '', bigVid: ''},
 
     ];
 

@@ -11,7 +11,6 @@ import wideTab from '../../media/Flyer/wideTab.svg';
 import leaves1 from '../../media/Flyer/leaves1.svg';
 import leaves2 from '../../media/Flyer/leaves2.svg';
 import leaves3 from '../../media/Flyer/leaves3.svg';
-import AutoTrader from '../../media/ApplicationsPage/AutoTrader.png';
 import FlyerMSGCreate from '../../media/Flyer/MsgCreator.png';
 import FlyerMSGManager from '../../media/Flyer/MsgManager.png';
 import HomePage from '../../media/Flyer/HomePage.png';
@@ -115,9 +114,6 @@ const Flyer = () => {
                           </a>
   </div>*/}
                   </div>
-                  <motion.div className='flyer-panel-1' style={{x: transformCrossPagePixels, y: transformVerticalSin }} >
-                    {/*<img src={flyerLogo} />*/}
-                  </motion.div>
               </div>
               <div className="panel-general transparent-background">
                   <motion.div style={{ x: transformFastRight , position: 'absolute', top:'0', left:'0', width:'100%', height:'100%', zIndex:'-1'}} >
@@ -129,7 +125,7 @@ const Flyer = () => {
                         <h1 className="header-1-min">There when you need it, gone when you don't</h1>
                         <h5 className='header-5-min' style={{width: '60%'}}>Open, connect and forget. Two clicks gets you up and running and Flyer can be hidden in the background out of sight.</h5>
                       </div>
-                      <motion.div className="float float-box float-left hover left box-shadow-medium-black padding-1 border-radius-10 " style={{ background: 'salmon' }}>
+                      <motion.div className="float float-box float-left  box-shadow-medium-black padding-1 border-radius-10 " style={{ background: 'salmon' }}>
                         <div className="flex flex-col w60">
                           <h1 className="header-1-min">Send What You Want</h1>
                           <p className="p-min min-height-75px">Flyer allows you send custom formatted message or use the default message. 
@@ -140,7 +136,7 @@ const Flyer = () => {
                           <img src={FlyerMSGCreate} style={{width:'100%', height: '100%', objectFit:'scale-down', overflow: 'hidden', position: 'relative' }}/>
                         </div>
                       </motion.div>
-                      <motion.div className="float float-box float-right hover up box-shadow-medium-black padding-1 border-radius-10 hover-mobile-row" style={{  background: 'grey' }}>
+                      <motion.div className="float float-box float-right  box-shadow-medium-black padding-1 border-radius-10 hover-mobile-row" style={{  background: 'grey' }}>
                         <div className="flex flex-col w60">
                           <h1 className="header-1-min">Send When You Want</h1>
                           <p className="p-min min-height-75px">With easy access on both the home screen and the taskbar menu, you can pause notifications at any time allowing you to trade without notifying others.</p>
@@ -153,7 +149,7 @@ const Flyer = () => {
               </div>
               <div className="panel-general transparent-background">
                 <div className="panel-grid-cont">
-                  <div className="grid-col-start-1 grid-col-span-2 grid-row-start-2 grid-row-span-1  w100 lightGreenBlue float hover right box-shadow-medium-black padding-1 border-radius-10">
+                  <div className="grid-col-start-1 grid-col-span-2 grid-row-start-2 grid-row-span-1  w100 lightGreenBlue float  box-shadow-medium-black padding-1 border-radius-10">
                         <div className="flex flex-col">
                           <h1 className="header-1-min">Send Where You Want</h1>
                           <p className="p-min">Flyer allows you to send specific trade types to a certain channel. 
@@ -230,12 +226,12 @@ const Flyer = () => {
                         </ul>
                       </div>
                       <div className="w40 height-80 border-radius-25 flex flex-col align-content-center justify-content-start border-radius-10 antique-white-background price-level-styling">
-                        <h1 className="padding-2 header-1-min">Paid Tier</h1>
-                        <h2 className="padding-2 header-2-min">$????</h2>
+                        <h1 className="padding-2 header-1-min">Download</h1>
+                        <h2 className="padding-2 header-2-min">Github Link</h2>
                         <ul className="text-decoration-none list-style-none padding-10 width-80">
-                          <li className="li-min">Connect using an open TWS application</li>
-                          <li className="li-min">Unlimited Discord channels</li>
-                          <li className="li-min">All message options</li>
+                          <li className="li-min">Program will be located on Github in the future</li>
+                          <li className="li-min">Updates will be done through the linked repository. It is private for now.</li>
+                          <li className="li-min"><a target="_blank" rel="noopener noreferrer" href='https://github.com/ChristianLorenzen/Flyer' style={{position: 'relative', width: '150px', minHeight: '60px', textDecoration: 'none', color: 'black' }}>Go to Github Repository</a></li>
                         </ul>
                       </div>
                     </div>

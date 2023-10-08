@@ -1,8 +1,8 @@
 import React from 'react';
 import './columnShowStyling.scss';
-import generationsVid from '../../media/GraphicsPage/IdleRPGMerchant.mp4';
+import generationsVid from '../../media/GraphicsPage/IdleRPGMerchantStrippedAudio.mp4';
 import videoWide from '../../media/ApplicationsPage/autoTraderShow.mp4';
-import voxel from '../../media/GraphicsPage/mountainsOPENGL.mp4';
+import terminal from '../../media/OtherWorkPage/TerminalShow.mp4';
 import { Link } from 'react-router-dom';
 
 const ColumnShowcase = () => {
@@ -39,8 +39,7 @@ const ColumnShowcase = () => {
                     <div className='section-info-details'>
                       <div className='details-upper'>
                         <p>
-                            EXPERIENCE WITH OPENGL, GLFW, UNITY AND UNREAL. MY FOCUS IN COLLEGE WAS COMPUTER GRAPHICS WHICH HELPED ME LEARN
-                            MORE ABOUT RAYTRACING, GRAPHICS TEXTURING AND MORE. GAME DEVELOPMENT HAS MAINLY BEEN DONE THROUGH UNITY.
+                            EXPERIENCE WITH OPENGL, GLFW, UNITY AND UNREAL. MY FOCUS IN COLLEGE WAS COMPUTER GRAPHICS WHICH LED TO CREATION OF A CUSTOM RAYTRACER AS WELL AS MANY OPENGL TEXTURE BASED PROJECTS. GAME DEVELOPMENT HAS MAINLY BEEN DONE THROUGH UNITY.
                         </p>
                       </div>
                       <div className='details-lower'>
@@ -81,8 +80,7 @@ const ColumnShowcase = () => {
                     <div className='section-info-details'>
                       <div className='details-upper'>
                         <p>
-                            VARIETY OF APPLICATIONS NORMALLY REVOLVING AROUND FINANCE. PROGRAMS WRITTEN IN PYTHON USING QT 
-                            AND IN REACT.
+                            VARIETY OF APPLICATIONS INCLUDING FINANCIAL AND OPTICAL APPLICATIONS. THE PROGRAMS RANGE FROM REACT WEBAPPS WITH SQL DATABSES, AND PYTHON FLASK-SOCKETIO BACKENDS, TO AS PYTHON APPS UTILIZING PYSIDE2.
                         </p>
                       </div>
                       <div className='details-lower'>
@@ -122,8 +120,8 @@ const ColumnShowcase = () => {
                       <div className='details-upper'>
                         <p>
                           I HAVE IMPLEMENTED MANY FINANCIAL ALGORITHMS FOR AUTOMATED TRADING IN PYTHON AND C. EXPERIENCE WITH
-                          CONVERTING AND EXPANDING MATLAB PROGRAMS DEALING WITH OPTICAL PHASE DATA RECOVERY. HAVE ALSO CREATED A CUSTOM
-                          SHELL, A UNIX MEMORY ALLOCATOR, AND MANY OS FUNCTIONS IN XINU SUCH AS TRAPPING SYS CALLS, DYNAMIC PRIO SCHEDULING,
+                          CONVERTING AND EXPANDING MATLAB PROGRAMS DEALING WITH OPTICAL PHASE DATA RECOVERY. I HAVE ALSO CREATED A CUSTOM
+                          SHELL, A UNIX MEMORY ALLOCATOR, AND MANY OS FUNCTIONS IN XINU SUCH AS TRAPPING SYSTEM CALLS, DYNAMIC PRIORITY SCHEDULING,
                           AND VIRTUAL PAGE TABLE CREATION AND MANAGEMENT.
 
                         </p>
@@ -135,7 +133,7 @@ const ColumnShowcase = () => {
                   </div>
                   <div className='section-display transition-1-ease transition-1half-delay'>
                     <video loop autoPlay muted alt="cardImage" className='card-image'>
-                      <source src={voxel} loading="lazy" type="video/mp4" />
+                      <source src={terminal} loading="lazy" type="video/mp4" />
                     </video>
                   </div>
                 </div>

@@ -105,7 +105,8 @@ const Card = (props) => {
                     {(isClicked && props.image['fullDesc'] !== '') ? <p className='card-title-full-desc'>{props.image['fullDesc']} </p> : <p className='card-title-desc'>{props.image['desc']}</p>}
                 </div>
                 <div className='card-title-right'>
-                    {props.image['url'] !== '' && isClicked && <a target="_blank" rel="noopener noreferrer" href={props.image['url']} className='card-title-learn-more effectLight'><span>Learn More</span></a>}
+                    {props.image['url'] !== '' && props.image['url'][0] == "/" && isClicked && <Link to={props.image['url']} className='card-title-learn-more effectLight'><span>Learn More</span></Link>}
+                    {props.image['url'] !== ''  && props.image['url'][0] != '/' && isClicked && <a target="_blank" rel="noopener noreferrer" href={props.image['url']} className='card-title-learn-more effectLight'><span>Learn More</span></a>}
                 </div>
             </div>
             <div className="card-image-cont">

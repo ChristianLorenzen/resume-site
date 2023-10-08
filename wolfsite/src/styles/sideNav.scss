@@ -1,6 +1,7 @@
 $lightGray:hsl(219, 15%, 23%);
 $fontColor:hsl(0, 0%, 100%);
 $accentColor:hsl(180, 100%, 50%);
+$pastelAccent: #9DC7C8;
 
 
 .App-header {
@@ -34,7 +35,7 @@ $accentColor:hsl(180, 100%, 50%);
       }
       h5:hover {
         cursor:default;
-        color: $accentColor;
+        color: $pastelAccent;
       }
     }
 
@@ -66,7 +67,7 @@ $accentColor:hsl(180, 100%, 50%);
         box-sizing: content-box;
       }
       .Social-icon-link:hover {
-        color: $accentColor;
+        color: $pastelAccent;
         
         .Social-icon-img {
           padding-left: 40%;
